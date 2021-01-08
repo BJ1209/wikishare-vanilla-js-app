@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wikiSearch App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./dist/css/styles.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="/js/main.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <section class="searchEntry">
+        <div class="logo">
+          <img src="./wikiShare!.svg" alt="logo" />
+        </div>
+        <form id="searchBar" class="searchBar">
+          <input id="search" placeholder="search" autocomplete="off" />
+          <button class="resetbtn none" id="clear" type="reset">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <button type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </section>
+      <section class="results">
+        <div class="statsBar">
+          <p class="stats" id="stats"></p>
+        </div>
+        <div class="searchResults" id="searchResults"></div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        <span>&lt;&lt;</span> Powered by
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+        <span>&gt;&gt;</span>
+      </p>
+    </footer>
+  </body>
+</html>

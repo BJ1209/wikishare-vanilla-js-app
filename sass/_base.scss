@@ -1,0 +1,88 @@
+$search-bar-border: #e6e6e6;
+$stats-clr: #70757a;
+$clear-btn-clr: #d9d9d9;
+
+$background-clr: #fff;
+$font-clr: #000;
+
+$logo-blue: #4285f4;
+$logo-red: #db4437;
+$logo-yellow: #f4b400;
+$logo-grean: #0f9d58;
+
+$link-clr: #1a0dab;
+$link-visited-clr: #609;
+$link-outline-clr: #000;
+
+$font-stack: "Roboto", Arial, sans-serif;
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  @extend %flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+}
+
+html,
+body {
+  background-color: $background-clr;
+  color: $font-clr;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  overflow-x: hidden;
+  @include flexColumn();
+}
+footer {
+  width: 100%;
+  height: 40px;
+  @include flexCenter;
+  p {
+    color: $stats-clr;
+    font-size: 0.5rem;
+
+    @include mq(768px) {
+      font-size: 1rem;
+    }
+  }
+  a {
+    color: $stats-clr;
+  }
+}
+
+img {
+  display: block;
+}
+.none {
+  display: none;
+}
+.flex {
+  display: flex;
+}

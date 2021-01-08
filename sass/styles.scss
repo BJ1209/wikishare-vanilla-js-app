@@ -1,0 +1,129 @@
+@import "./base";
+
+.searchEntry {
+  @include flexColumn;
+  padding-top: 3em;
+  .logo {
+    img {
+      object-fit: contain;
+      height: 3.8em;
+      margin-bottom: 0.5em;
+      @include mq(768px) {
+        height: 6em;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .searchBar {
+    width: 90vw;
+    display: flex;
+    border: 2px solid $search-bar-border;
+    border-radius: 500px;
+    overflow: hidden;
+    padding: 0.3em 0.5em 0.3em 1em;
+    margin-bottom: 1em;
+    @include mq(768px) {
+      width: 80vw;
+    }
+    @include mq(1024px) {
+      width: 60vw;
+    }
+    &:hover,
+    &:focus-within {
+      box-shadow: 0 2px 5px 2px $search-bar-border;
+    }
+    input {
+      flex-grow: 1;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      min-width: 150px;
+      @include mq(768px) {
+        font-size: 1.25rem;
+      }
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding-right: 0.5em;
+      outline: none;
+      min-height: 32px;
+      min-width: 32px;
+      i {
+        font-size: 1.1rem;
+        color: $stats-clr;
+      }
+
+      &:hover,
+      &:focus {
+        padding-bottom: 0.25em;
+        i {
+          color: $logo-grean;
+        }
+      }
+    }
+    .resetbtn {
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      &:hover,
+      &:focus {
+        i {
+          color: $logo-red;
+        }
+      }
+    }
+  }
+}
+
+.results {
+  padding: 0 0.5em;
+  .stats {
+    width: 100%;
+    font-size: 0.85rem;
+    margin-bottom: 0.5em;
+  }
+  .searchResults {
+    @include flexColumn;
+    .resultItem {
+      width: 100%;
+      margin: 0.3em 0;
+      .resultTitle {
+        overflow: hidden;
+        padding: 5px 5px 5px 0;
+        width: 100%;
+        & > a {
+          text-align: left;
+          text-decoration: none;
+          color: $link-clr;
+          font-size: 0.9rem;
+          &:hover {
+            text-decoration: underline;
+          }
+          &:focus {
+            outline: 2px solid $link-outline-clr;
+          }
+          &:visited {
+            color: $link-visited-clr;
+          }
+        }
+      }
+      .resultContent {
+        @extend %flex;
+        .resultImage {
+          object-fit: contain;
+          height: 2.8em;
+          margin-right: 0.5em;
+        }
+        .resultDescription {
+          flex-grow: 1;
+          font-size: 0.85rem;
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
